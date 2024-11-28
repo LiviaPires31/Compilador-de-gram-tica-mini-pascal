@@ -1,0 +1,11 @@
+program TESTE;
+#var a, b, soma, divisao;
+begin
+    read("entre com a: ", a);
+    read("entre com b: ", b);
+    soma = a + b;
+    divisao = a @ b;
+    print(sokfjskjskljsljsl);
+end.
+
+

@@ -1,0 +1,34 @@
+<p> -> program ident ; <declaracoes> <corpo> .
+<declaracoes> -> LAMBDA | var <listavars> ;
+<listavars> -> ident <restoListavars>
+<restoListavars> -> LAMBDA | , <listavars>
+<corpo> -> begin <cons> end
+<cons> -> LAMBDA | <com> <cons>
+<com> -> <atrib> | <if> | <while> | <ler> | <escrever> | <bloco>
+<atrib> -> ident = <exp> ;
+<if> -> if ( <exp> ) <com> <elseopc>
+<elseopc> -> LAMBDA | else <com>
+<bloco> -> { <cons> }
+<ler> -> read ( string , ident ) ;
+<escrever> -> print ( <msg> ) ;
+<msg> -> <coisa> <restomsg>
+<coisa> -> string | ident
+<restomsg> -> LAMBDA | , <msg>
+<while> -> while ( <exp> ) <com>
+<exp> -> <or>
+<or> -> <and> <restoOr>
+<restoOr> -> or <and> <restoOr> | LAMBDA
+<and> -> <not> <restoAnd>
+<restoAnd> -> and <not> <restoAnd> | LAMBDA
+<not> -> not <not> | <rel>
+<rel> -> <uno> <restoRel>
+<restoRel> -> LAMBDA | <oprel> <uno>
+<oprel> -> == | != | < | > | <= | >=
+<uno> -> + <uno> | - <uno> | <soma>
+<soma> -> <mult> <restosoma>
+<restosoma> -> + <mult> <restosoma> | - <mult> <restosoma> | LAMBDA
+<mult> -> <folha> <restomult>
+<restomult> -> * <folha> <restomult> | / <folha> <restomult> | LAMBDA
+<folha> -> num | ident | ( <exp> )
+
+
